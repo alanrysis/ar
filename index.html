@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Alan Rysis">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="http://alanrysis.com/">
+<meta property="og:title" content="Alan Rysis">
+<meta property="og:site_name" content="Alan Rysis">
+<meta property="og:description" content="Alan Rysis">
+<meta property="og:image" content="src/images/Homepage/AlanRysisImgMeta.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1986">
+<meta property="og:image:height" content="1986">
+<meta property="og:type" content="website">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Alan Rysis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="src/images/Global/favico.png">
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet">
+<link rel="stylesheet" href="src/css/CommonStyles.css">
+<link rel="stylesheet" href="src/css/megafish.css">
+<link rel="stylesheet" href="src/css/navigationStyles.css">
+<link rel="stylesheet" href="src/css/homepageStyles.css">
+<link rel="stylesheet" href="src/css/mobileNavigationStyles.css">
+<script src="src/js/jquery-3.2.0.js"></script>
+<script src="src/js/hoverIntent.js"></script>
+<script src="src/js/superfish.js"></script>
+<script src="src/js/superfish-Adds.js"></script>
+<script src="src/js/EasePack.min.js"></script>
+<script src="src/js/rAF.js"></script>
+<script src="src/js/TweenLite.min.js"></script>
+<script src="src/js/CientificBackground.js"></script>
+<script src="src/js/toViewAnimation.js"></script>
+<script src="src/js/jquery.easing.1.3.js"></script>
+<script src="src/js/mobileNavigation.js"></script>
+<script src="src/js/mobileNavigationAdds.js"></script>
+<script src="src/js/customScripts.js"></script>
+<script src="src/js/jquery.anchor.js"></script>
+<script src="src/js/parallaxMousemove.js"></script>
+<script src="src/js/audioPlayerRev.js"></script>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Codystar);
+	
+.mainFlashImages{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index: -1;
+  overflow: hidden;
+}
+	
+.subFlash{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index: -2;
+}
+	
+.subFlash2{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index: -2;
+  /*-webkit-animation: flash 0.5s infinite linear forwards;
+  -moz-animation: flash 0.5s infinite linear forwards;
+  -ms-animation: flash 0.5s infinite linear forwards;
+  -o-animation: flash 0.5s infinite linear forwards;*/
+  -moz-transition: all 200ms cubic-bezier(0,.72,.51,1);
+  -webkit-transition: all 200ms cubic-bezier(0,.72,.51,1);
+  -o-transition: all 200ms cubic-bezier(0,.72,.51,1);
+  transition: all 200ms cubic-bezier(0,.72,.51,1);
+}
+	
+#flashImages{
+  position: absolute;
+  top:0;
+  left:0;
+	text-align: center;
+    font:150px 'Codystar', cursive;
+	animation-name: shake;
+	animation-delay:1s;
+	animation-duration:2s;
+	animation-timing-function:ease-out;
+	animation-iteration-count:infinite;
+	color:#464C54;
+	opacity:0.8;
+	display: none;
+}
+	
+#flashImages p.text{
+	font-family: 'Codystar', cursive;
+	font-size: 50px;
+	line-height: 50px;
+	color:#464C54;
+}
+	
+#flashImages img{
+	display: block;
+	margin-top: -40%;
+	margin-left: -40%;
+}
+
+@-webkit-keyframes flash {
+  0%   {opacity: 0;}
+  80%  {opacity: 0.8;}
+}
+@-moz-keyframes flash {
+  0%   {opacity: 0;}
+  80%  {opacity: 0.8;}
+}
+@-ms-keyframes flash {
+  0%   {opacity: 0;}
+  80%  {opacity: 0.8;}
+}
+@-o-keyframes flash {
+  0%   {opacity: 0;}
+  80%  {opacity: 0.8;}
+}
+	
+div#preload { display: none; }
+	
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97254108-1', 'auto');
+  ga('send', 'pageview', {'page': location.pathname+location.search+location.hash});
+
+</script>
+</head>
+<body>
+<header>
+    <div class="menuNav">
+      <ul class="sf-menu" id="example">
+      <li class="current">
+      	<a href="index.html">Home</a>
+      </li>
+      <li class="sub">
+      	<a href="News/news.html">News</a>
+      </li>
+      <li class="sub">
+      	<a>Music</a>
+        <ul>
+        	<li><a href="Music/released.html">Released</a></li>
+            <li><a href="Music/previews.html">Previews</a></li>
+        </ul>
+      </li>
+      <li class="sub">
+      	<a href="Videos/videos.html">Videos</a>
+      </li>
+      <li class="sub">
+      	<a href="Biography/biography.html">Biography</a>
+      </li>
+      <li class="sub">
+      	<a href="Contact/contact.html">Contact</a>
+      </li>
+      <li class="sub">
+      	<a>Social</a>
+        <ul>
+        	<li><a class="track" data-tracking="ref=facebook" href="https://www.facebook.com/alanrysis" target="_blank">facebook</a></li>
+            <li><a class="track" data-tracking="ref=youtube" href="https://www.youtube.com/channel/UCeJWmiPYKZOLxFsslngqyUA" target="_blank">Youtube</a></li>
+            <li><a class="track" data-tracking="ref=twitter" href="https://www.twitter.com/alanrysis" target="_blank">twitter</a></li>
+            <li><a class="track" data-tracking="ref=Instagram" href="https://www.instagram.com/alanrysis" target="_blank">Instagram</a></li>
+        </ul>
+      </li>
+      </ul>
+    </div>
+    <div class="mobileMainHeader">
+    	<a href="index.html" target="_self"><img class="logo" src="src/images/Homepage/AlanRysisLogoSimple.png" alt="Alan Rysis" border="0"></a>
+      	<div id="openAccordion" class="closedPannel fRight"><span class="mIco"></span></div>
+        <span class="clearfix"></span>
+    </div>
+</header>
+<!-- Mobile navigation -->
+<section id="only-one" data-accordion-group>
+    
+    <div data-item><a href="index.html" target="_self">Home<span class="data-item-iconDefault"><span class="icon"></span></span></a></div>
+    <div data-item><a href="News/news.html" target="_self">News<span class="data-item-iconDefault"><span class="icon"></span></span></a></div>
+      <section data-accordion>
+        <div data-control><p>Music</p><span class="data-item-icon"><span class="icon"></span></span></div>
+        <div data-content>
+          <article><a href="Music/released.html" target="_self">Released<span class="data-item-icon"></span></a></article>
+          <article><a href="Music/previews.html" target="_self">Previews<span class="data-item-icon"></span></a></article>
+        </div>
+      </section>
+      
+      <div data-item><a href="Videos/videos.html" target="_self">Videos<span class="data-item-iconDefault"><span class="icon"></span></span></a></div>
+      <div data-item><a href="Biography/biography.html" target="_self">Biography<span class="data-item-iconDefault"><span class="icon"></span></span></a></div>
+      <div data-item><a href="Contact/contact.html" target="_self">Contact<span class="data-item-iconDefault"><span class="icon"></span></span></a></div>
+    
+      <section data-accordion>
+        <div data-control><p>Social</p><span class="data-item-icon"><span class="icon"></span></span></div>
+        <div data-content>
+          <article><a class="track" data-tracking="ref=facebook" href="https://www.facebook.com/alanrysis" target="_blank">facebook<span class="data-item-icon"></span></a></article>
+          <article><a class="track" data-tracking="ref=youtube" href="https://www.youtube.com/channel/UCeJWmiPYKZOLxFsslngqyUA" target="_blank">Youtube<span class="data-item-icon"></span></a></article>
+          <article><a class="track" data-tracking="ref=twitter" href="https://www.twitter.com/alanrysis" target="_blank">twitter<span class="data-item-icon"></span></a></article>
+          <article><a class="track" data-tracking="ref=Instagram" href="https://www.instagram.com/alanrysis" target="_blank">Instagram<span class="data-item-icon"></span></a></article>
+        </div>
+      </section>
+</section>
+<!-- End Mobile navigation -->
+    <div id="large-header" class="large-header animation-element fade-in delay2000 dur2000">
+  		<canvas id="demo-canvas"></canvas>
+	</div>
+    <div class="mainContent">
+      <div class="parallax" data-parallax-strength="150">
+       <div class="animation-element blur-intro delay0 dur2000">
+    	  <img id="imgLogoAnim" src="src/images/Homepage/AlanRysisLogoSimple.png" alt="Alan Rysis">
+       </div>
+      </div>
+    </div>
+    <div class="mainFlashImages">
+     <div class="subFlash parallax" data-parallax-strength="50">
+     	<div class="subFlash2">
+    		<div class="flash" id="flashImages"></div>
+		</div>
+	 </div>
+	</div>
+	<div id="preload">
+	   <img src="src/images/Homepage/giphy1.gif" width="1" height="1" alt="Image 01">
+	   <img src="src/images/Homepage/giphy2.gif" width="1" height="1" alt="Image 02">
+	   <img src="src/images/Homepage/giphy3.gif" width="1" height="1" alt="Image 03">
+	   <img src="src/images/Homepage/giphy4.gif" width="1" height="1" alt="Image 04">
+	   <img src="src/images/Homepage/giphy5.gif" width="1" height="1" alt="Image 05">
+	   <img src="src/images/Homepage/giphy6.gif" width="1" height="1" alt="Image 06">
+	   <img src="src/images/Homepage/giphy7.gif" width="1" height="1" alt="Image 07">
+	   <img src="src/images/Homepage/giphy8.gif" width="1" height="1" alt="Image 08">
+	   <img src="src/images/Homepage/giphy9.gif" width="1" height="1" alt="Image 09">
+	   <img src="src/images/Homepage/giphy10.gif" width="1" height="1" alt="Image 10">
+	   <img src="src/images/Homepage/giphy11.gif" width="1" height="1" alt="Image 11">
+	   <img src="src/images/Homepage/giphy12.gif" width="1" height="1" alt="Image 12">
+	   <img src="src/images/Homepage/giphy13.gif" width="1" height="1" alt="Image 13">
+	   <img src="src/images/Homepage/giphy14.gif" width="1" height="1" alt="Image 14">
+	   <img src="src/images/Homepage/giphy15.gif" width="1" height="1" alt="Image 15">
+	</div>
+	
+	<div id="audioPlayerRev" class="mainSidePlayer">
+		<ul>
+			<li class="music" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/SinglePlayer.mp3" data-title="The Tune" data-author="Alan Rysis" data-buy-link="https://www.google.pt/" data-share-link="https://twitter.com/home?status=http%3A//alanrysis.com/;https://www.facebook.com/sharer/sharer.php?u=http%3A//alanrysis.com/"></li>
+			<!--<li class="music" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/audio1.mp3" data-title="Be" data-author="Alan Rysis" data-share-link="https://www.youtube.com/"></li>
+			<li class="music" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/supermario.mp3" data-title="Super Mario 2" data-author="Alan Rysis" data-buy-link="https://www.google.pt/" data-share-link="https://www.youtube.com/"></li>
+			<li class="music" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/audio2.mp3" data-title="Was were" data-author="Alan Rysis" data-share-link="https://www.youtube.com/"></li>-->
+		</ul>
+	</div>
+	
+	
+<!--<div id="audioPlayerRev" class="mainSidePlayer">
+		<div class="currentAudio">
+			<div class="imgCover">
+				<img id="cover" src="src/images/Biography/AlanRysisLogo_s.jpg" alt="Alan Rysis - Dare To Begin">
+			</div>
+			<div class="infoAndControls">
+				<div class="titleAndArtist">
+					<h1 id="title">Dare To Begin</h1>
+					<h2 id="artist">Alan Rysis</h2>
+				</div>
+				<div id="playerControls">
+					<div class="timeContainer">
+						<div id="currentTime">0:00</div><div id="totalTime">5:32</div>
+					</div>
+					<div class="progressBarContainer"><div id="progressBar"></div></div>
+					<div class="controls">
+						<a class="btPrev"></a><a class="btPlay"></a><a class="btNext"></a><a class="btMute"></a>
+					</div>
+				</div>
+				<a class="btBuy" href="#" target="_blank"></a>
+				<a class="btShare" href="#" target="_blank"></a>
+			</div>
+		</div>
+	</div>-->
+	
+<script>
+$(document).ready(function() {
+	/* Mobile Navigation */
+	$('#only-one [data-accordion]').maccordion({
+		transitionSpeed: 500	
+	});
+	/* End Mobile Navigation */
+	
+	
+	$('#audioPlayerRev').audioPlayerRev();
+	
+	
+	// flashImages script
+	var _flashObj = $('#flashImages'),
+		_subflashObj = $('.subFlash2'),
+        _interval,
+        random_content,
+        random_content_lastValue,
+        vTopRandom,
+        vLeftRandom,
+		vScaleRandom,
+        content = new Array(/*
+"&#9732;","&#9733;","&#9734;","&#9786;","&#9859;","&#9861;","&#9881;","&#9885;","&#9991;","&#10025;","&#10026;","&#10027;","&#10028;","&#10029;","&#10030;","&#10031;","&#12951;","&#12953;","&#128246;","&#128267;","&#128266;","🕉","✡️","割","指","㊗","㊙", "<p class='text'>Elements</p>", "<p class='text'>Connection</p>", "<p class='text'>Meaning</p>", "<p class='text'>Expression</p>", "<p class='text'>Objective</p>", "<p class='text'>Path</p>", "<p class='text'>Explore</p>", "<p class='text'>Create</p>", "<p class='text'>Believe</p>", */"<img src='src/images/Homepage/giphy1.gif' alt='Gif1'>", "<img src='src/images/Homepage/giphy2.gif' alt='Gif2'>", "<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>", "<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>", "<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>", "<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>", "<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>", "<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>", "<img src='src/images/Homepage/giphy5.gif' alt='Gif5'>", "<img src='src/images/Homepage/giphy6.gif' alt='Gif6'>", "<img src='src/images/Homepage/giphy7.gif' alt='Gif7'>", "<img src='src/images/Homepage/giphy8.gif' alt='Gif8'>", "<img src='src/images/Homepage/giphy9.gif' alt='Gif9'>", "<img src='src/images/Homepage/giphy10.gif' alt='Gif10'>", "<img src='src/images/Homepage/giphy11.gif' alt='Gif11'>", "<img src='src/images/Homepage/giphy12.gif' alt='Gif12'>", "<img src='src/images/Homepage/giphy13.gif' alt='Gif13'>", "<img src='src/images/Homepage/giphy14.gif' alt='Gif14'>", "<img src='src/images/Homepage/giphy15.gif' alt='Gif15'>" );
+  
+    // start changing everything
+    startChanging();
+    
+    function startChanging() {
+        
+        setInterval(function() {
+            random_content = randomBetween(content.length);
+            vTopRandom = Math.floor(Math.random() * 60) + 20;
+            vLeftRandom = Math.floor(Math.random() * 50) + 20;
+           if (_flashObj.hasClass('flash')) {
+               _flashObj.html(content[random_content]);
+               _flashObj.css({
+                 'top': vTopRandom + '%',
+                  'left': vLeftRandom + '%'
+               });
+           } else {
+               _flashObj.html("");
+           }
+        }, 2000);
+		
+		setInterval(function() {
+			vScaleRandom = ((Math.random() * 2) + 1) * 0.8;
+           if (_flashObj.hasClass('flash')) {
+			   _subflashObj.css({
+				   'transform': 'scale('+ vScaleRandom + ')'
+               });
+           } else {
+               _flashObj.html("");
+           }
+        }, 1000);
+    };
+    
+    function randomBetween (max) {
+        var r;
+        do {r = Math.random();} while(r == 1.0);
+        return parseInt(r * max);
+    }
+	
+});
+</script>
+</body>
+</html>

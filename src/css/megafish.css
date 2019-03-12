@@ -1,0 +1,273 @@
+/*** ESSENTIAL STYLES ***/
+/* Reset Box Model */
+*{
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;	
+}
+/* End Reset Box Model */
+.sf-menu {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+	display:inline-block;
+	text-align:left;
+	font-family: 'Raleway', sans-serif;
+	font-weight:400;
+	text-transform:uppercase;
+}
+
+.sf-menu li.sub {
+    position: relative;
+    padding: 0;
+	/*background: #BDD2FF;*/
+    white-space: nowrap;
+    /* no need for Supersubs plugin */
+    
+    *white-space: normal;
+    /* ...unless you support IE7 (let it wrap) */
+    
+    -webkit-transition: background .2s;
+    transition: background .2s;
+}
+
+.sf-menu li.sub > li {
+    position: relative;
+    float: left;
+}
+
+.sf-menu li.sub:hover,
+.sf-menu li.sub.sfHover > a {
+    background: rgba(239,239,239,0.9);
+    color: #646C77;
+    /* only transition out, not in */
+    
+    -webkit-transition: none;
+    transition: none;
+}
+
+.sf-menu li:hover,
+.sf-menu li.sfHover > a {
+    background: rgba(239,239,239,0.8);
+    color: #646C77;
+    /* only transition out, not in */
+    
+    -webkit-transition: none;
+    transition: none;
+}
+
+/* Links multi-levels */
+.sf-menu > li a {
+    display: block;
+    position: relative;
+	height:44px;
+	line-height:44px;
+	padding:0 15px;
+    text-decoration: none;
+    color: #000000;
+	padding-right:50px;
+}
+
+/* Links Topo  */
+.sf-menu > li > a {
+    display: block;
+    position: relative;
+    padding:0 35px;
+	height:70px;
+	line-height:70px;
+    text-decoration: none;
+    color:#464C54;
+	border-bottom:2px solid #E3E3E3;
+}
+
+.sf-menu > li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #464C54;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.sf-menu > li > a:hover:before,
+.sf-menu > li.sfHover > a:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.sf-menu > li > a:hover {
+    color: #646C77;
+}
+
+.sf-menu > li {
+    background: none;
+    -webkit-transition: background .2s;
+    transition: background .2s;
+    float: left;
+}
+
+.sf-menu > li:hover,
+.sf-menu > li.sfHover {
+    /*background: #CFDEFF;*/
+    /* only transition out, not in */
+    
+    -webkit-transition: none;
+    transition: none;
+}
+
+.sf-menu li.sub ul > li {
+    position: relative;
+}
+
+.sf-menu ul,
+.sf-menu ul ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+    list-style: none;
+    padding: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
+    min-width: 12em;
+    /* allow long menu items to determine submenu width */
+    
+    *width: 12em;
+    /* no auto sub width for IE7, see white-space comment below */
+}
+
+/* ul style */
+.sf-menu ul {
+	background: #FFFFFF;
+	border-top:2px solid #464C54;
+	margin-top:-2px;
+}
+
+.sf-menu ul ul {
+    top: 0;
+    left: 100%;
+	background: #FFFFFF;
+	border-top:2px solid #464C54;
+	margin-top:-2px;
+}
+
+.sf-menu ul li {
+
+}
+
+.sf-menu ul li a {
+	text-decoration:none;
+	color: #000000;
+	font-size:12px;
+	  -moz-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  -moz-transform: translate3d(-5px, 0px, 0px);
+  -webkit-transform: translate3d(-5px, 0px, 0px);
+  -o-transform: translate(-5px, 0px);
+  -ms-transform: translate(-5px, 0px);
+  transform: translate3d(-5px, 0px, 0px);
+}
+
+/* Manter estilo selecão submenu */
+.sf-menu ul li.sfHover > a,
+.sf-menu ul li a:hover {
+    background: #F9F9F9;
+	color:#646C77;
+	-moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.sf-menu ul ul li {
+    background: #FFFFFF;
+}
+
+/*** DEMO SKIN ***/
+
+/*** mega menu dropdown ***/
+
+.sf-mega {
+    background-color: #FFFFFF;
+    padding: 1em;
+    box-sizing: border-box;
+    width: 100%;
+	color:#000000;
+	margin-top:-2px;
+	border-top:2px solid #CC0001;
+}
+.sf-mega-section {
+    float: left;
+    width: 8em;
+    /* optional */
+    
+    padding: 0 1em 1em 0;
+    margin-right: 1em;
+    border-right: 1px solid #b4c8f5;
+}
+
+.sf-menu .sf-mega {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+	box-shadow: 2px 3px 6px rgba(0, 0, 0, .2);
+    width: 100%;
+    /* allow long menu items to determine submenu width */
+}
+
+.sf-menu li:hover > .sf-mega,
+.sf-menu li.sfHover > .sf-mega {
+    display: block;
+}
+
+/*** arrows (for all except IE7) **/
+
+/*.sf-arrows li.sub .sf-with-ul {
+    padding-right: 50px;
+    *padding-right: 1em;
+    /* no CSS arrows for IE7 (lack pseudo-elements) */
+
+/* styling for both css and generated arrows */
+
+.sf-arrows .sf-with-ul:after {
+    content: '';
+    position: absolute;
+	top:0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+    border-top-color: white;
+    /* IE8 fallback colour */
+}
+
+/* Sub menus Arrows */
+
+.sf-arrows ul .sf-with-ul:after {
+    border-color: transparent;
+    border-left-color: rgba(0, 0, 0, .5);
+	background:url(file:///C|/EV2014OnDISK/Slider/superfish-menu-Project/superfish-master/src/right.png) no-repeat center center;
+	background-size:8px auto;
+}
+.sf-arrows ul li.sub > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+    background:url(file:///C|/EV2014OnDISK/Slider/superfish-menu-Project/superfish-master/src/rightRed.png) no-repeat center center;
+	background-size:8px auto;
+}

@@ -1,0 +1,652 @@
+html{
+	width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+      body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+		background:url('../images/Homepage/AlanRysisLogobg.png');
+		background-size:cover;
+		background-position:fixed;
+      }
+
+	  /* particles */
+	.large-header {
+		position: absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		width: 100%;
+		overflow: hidden;
+		background-size: cover;
+		background-position: center center;
+		z-index: -10;
+	}
+	.mainContent{
+		width:100%;
+		max-width:972px;
+		padding:5% 100px 100px 100px;
+		margin:auto;
+		/*background-color:rgba(255,255,255,0.8);*/
+		overflow: hidden;
+	}
+	
+	.mainContent img{
+		width:100%;
+		height:auto;
+		padding:0;
+		margin-top: 10%;
+	}
+
+
+.mainSidePlayer{
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	width: 100%;
+	max-width: 500px;
+	background-color: rgba(255,255,255,0.9);
+	border-color: 1px #5E5E5E solid;
+	color: #646C77;
+	-webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+	padding: 0;
+	margin: 0;
+	opacity: 0;
+	animation-name: slide-up;
+	animation-delay: 500ms;
+	animation-duration: 700ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0,.72,.51,1);
+}
+
+@keyframes slide-up {
+0% {
+	opacity: 0;
+    transform: translate(0, 300px);
+	}
+100% {
+	opacity: 1;
+    transform: translate(0, 0);
+	}
+}
+
+.mainSidePlayer .currentAudio{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.mainSidePlayer .currentAudio .imgCover{
+	display: block;
+	width: 35%;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.mainSidePlayer .currentAudio .imgCover img{
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls{
+	position: relative;
+	display: block;
+	width: 65%;
+	height: 0;
+	padding: 15px;
+	padding-bottom: 32%;
+	margin: 0;
+	float: left;
+	/*background-color: blanchedalmond;*/
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .btBuy{
+	position: absolute;
+	top:5px;
+	right:5px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/buyIco.png);
+	background-size: 30px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share{
+	position: absolute;
+	top:5px;
+	left:5px;
+	display: inline-block;
+	width: 40px;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(255,255,255,0.9);
+	opacity: 1;
+	overflow: hidden;
+	border-radius: 50px;
+	-webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share .shareLinks{
+	display: block;
+	width: 40px;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	cursor: pointer;
+	opacity: 1;
+	overflow: hidden;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share .shareLinks a.facebookShare{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/facebookIco.png);
+	background-size: 25px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share .shareLinks a.twitterShare{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/twitterIco.png);
+	background-size: 25px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share .shareLinks a.instagramShare{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/instagramIco.png);
+	background-size: 25px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+.mainSidePlayer .currentAudio .infoAndControls .share.open .shareLinks{
+	display: block;
+	width: 40px;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	opacity: 1;
+	background-color: rgba(255,255,255,0.9);
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share.open{
+	position: absolute;
+	top:5px;
+	left:5px;
+	display: inline-block;
+	width: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share .btShare{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/shareIcon.png);
+	background-size: 25px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .share.open .btShare{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/shareIcon.png);
+	background-size: 25px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 0.4;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .titleAndArtist{
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .titleAndArtist h1{
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	line-height: 35px;
+	font-weight: 200;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .titleAndArtist h2{
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls{
+	position: absolute;
+	top:50%;
+	left:0;
+	/*background-color: aqua;*/
+	height: 200px;
+	display: block;
+	width: 100%;
+	padding: 0 10%;
+	margin: 0;
+	text-align: center;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .timeContainer{
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .timeContainer #currentTime{
+	display: block;
+	width: 50%;
+	padding: 0;
+	margin: 0;
+	float: left;
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: 400;
+	text-align: left;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .timeContainer #totalTime{
+	display: block;
+	width: 50%;
+	padding: 0;
+	margin: 0;
+	float: left;
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: 400;
+	color: #0E99FE;
+	text-align: right;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .progressBarContainer{
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border-radius: 10px;
+	background-color: #D2D9DF;
+	clear: both;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .progressBarContainer #progressBar{
+	display: block;
+	width: 0;
+	height: 7px;
+	padding: 0;
+	margin: 0;
+	border-radius: 10px;
+	background-color: #0E99FE;
+	transition-duration: 0s;
+	transition-property: all;
+	transition-timing-function: linear;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .progressBarContainer:hover{
+	cursor: pointer;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls{
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 10px 0 0 0;
+	margin: 0;
+	text-align: center;
+	/*background-color: aqua;*/
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btPlay{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0 15px 0 15px;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/play-icon-2.png);
+	background-size: auto 40px;
+	background-position: 0 0;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btPlay.playing{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0 15px 0 15px;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/play-icon-2.png);
+	background-size: auto 40px;
+	background-position: 40px 0;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btPlay:hover{
+	opacity: 0.9;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btPrev{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/prevIcon.png);
+	background-size: 70% auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btPrev:hover{
+	opacity: 0.9;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btNext{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/nextIcon.png);
+	background-size: 70% auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btNext:hover{
+	opacity: 0.9;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btMute{
+	position: absolute;
+	top:10px;
+	right:0;
+	display: inline-block;
+	width: 30px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/muteIco.png);
+	background-size: 60px auto;
+	background-position: 0 center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btMute.muted{
+	position: absolute;
+	top:10px;
+	right:0;
+	display: inline-block;
+	width: 30px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/muteIco.png);
+	background-size: 60px auto;
+	background-position: -30px center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btMute:hover{
+	opacity: 0.9;
+}
+
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btLoop{
+	position: absolute;
+	top:10px;
+	left:0;
+	display: inline-block;
+	width: 25px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/loopIcon.png);
+	background-size: 50px auto;
+	background-position: 0 center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btLoop.enable{
+	position: absolute;
+	top:10px;
+	right:0;
+	display: inline-block;
+	width: 25px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/loopIcon.png);
+	background-size: 50px auto;
+	background-position: -25px center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls #playerControls .controls .btLoop:hover{
+	opacity: 0.9;
+}
+
+
+@keyframes shake {
+  0.1% {
+    transform: translate(-10px, 8px) rotate(2deg);
+}
+0.2% {
+    transform: translate(-6px, 14px) rotate(0deg);
+}
+0.3% {
+    transform: translate(-4px, -6px) rotate(-3deg);
+}
+0.4% {
+    transform: translate(-1px, -12px) rotate(4deg);
+}
+0.5% {
+    transform: translate(-2px, 10px) rotate(-4deg);
+}
+0.6% {
+    transform: translate(3px, -6px) rotate(2deg);
+}
+0.7% {
+	opacity:0.2;
+    transform: translate(15px, 9px) rotate(-4deg);
+}
+0.8% {
+    transform: translate(3px, 9px) rotate(-2deg);
+}
+0.9% {
+	opacity:1;
+    transform: translate(-11px, -6px) rotate(1deg);
+}
+0.10% {
+    transform: translate(2px, 11px) rotate(6deg);
+}
+0.11% {
+    transform: translate(-2px, -11px) rotate(2deg);
+}
+0.12% {
+    transform: translate(-5px, -2px) rotate(-3deg);
+}
+0.13% {
+    transform: translate(13px, -13px) rotate(1deg);
+}
+0.14% {
+    transform: translate(-10px, -12px) rotate(-1deg);
+}
+0.15% {
+    transform: translate(5px, 3px) rotate(-4deg);
+}
+0.16% {
+	opacity:0.5;
+    transform: translate(-4px, 1px) rotate(-3deg);
+}
+0.17% {
+	opacity:1;
+    transform: translate(-14px, -8px) rotate(2deg);
+}
+0.18% {
+    transform: translate(8px, -12px) rotate(3deg);
+}
+0.19% {
+    transform: translate(13px, -14px) rotate(-1deg);
+}
+0%, 2%, 100% {
+    transform: translate(0, 0) rotate(0);
+}
+}
+
+/* Media Queries */
+
+@media (max-width:1024px){
+	 .mainContent img{
+		margin-top: 15%;
+	}
+	
+	.mainContent{
+		position: relative;
+	}
+	
+	#demo-canvas{
+		display:none;
+	}
+}
+
+@media (max-width:908px){
+	 .mainContent img{
+		margin-top: 5%;
+		padding:5% 15px 100px 15px;
+	}
+}
+
+@media (max-width:800px){
+
+}
+
+@media (max-width:480px){
+	.mainContent{
+		padding:5% 15px 100px 15px;
+	}
+	
+	.mainSidePlayer{
+		width: 100%;
+		max-width: 100%;
+		bottom:0;
+		right: 0;
+		background-color: rgba(255,255,255,0.95);
+	}
+	
+	.mainSidePlayer .currentAudio .infoAndControls{
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 200px;
+		padding: 15px;
+		padding-bottom: 0;
+		margin: 0;
+		float: none;
+		overflow: hidden;
+		/*background-color: blanchedalmond;*/
+	}
+
+	.mainSidePlayer .currentAudio .imgCover{
+		display: none;
+	}
+	
+}
+
+/*End Navigation Bar Styles*/

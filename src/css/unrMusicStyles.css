@@ -1,0 +1,411 @@
+html{
+	width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+      body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+		background:url('../images/Homepage/AlanRysisLogobg.png');
+		background-size:cover;
+		background-position:fixed;
+      }
+
+	  /* particles */
+	.large-header {
+		position: absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		width: 100%;
+		overflow: hidden;
+		background-size: cover;
+		background-position: center center;
+		z-index: -10;
+	}
+	.mainContent{
+		width:100%;
+		max-width:972px;
+		padding:5% 100px 0 100px;
+		margin:auto;
+		/*background-color:rgba(255,255,255,0.8);*/
+	}
+	
+	.mainContent img{
+		width:100%;
+		height:auto;
+		padding:0;
+		margin-top: 10%;
+	}
+
+/* Artigo 3 Tab Styles */
+
+.article-cs-tab{
+	width:890px;
+	min-width:320px;
+	height:auto;
+	margin:auto;
+	border:0;
+	border-collapse:collapse;
+	text-align:left;
+	background-color:transparent;
+	font-family: 'Raleway', sans-serif;
+	overflow:hidden;
+	padding:0 15px 30px 15px;
+	color:#464C54;
+}
+
+.article-cs-tab .mainArticleTitle{
+	overflow:hidden;
+	padding:40px 0 40px 0;
+}
+
+.article-cs-tab .mainArticleTitle h1{
+	display:block;
+	margin:0 0 10px 0;
+	padding:0 0 0 75px;
+	font-size:50px;
+	line-height:45px;
+	background:url(../images/Music/musiclogo.png) no-repeat left center;
+	background-size:60px auto;
+	font-weight:200;
+}
+
+.cs-tab{
+	width:100%;
+	height:auto;
+	margin:0 0 80px 0;
+	border:0;
+	border-collapse:collapse;
+	text-align:left;
+	background-color:transparent;
+	overflow:hidden;
+}
+
+.cs-tab .cs-tab-contentfigure{
+	width:23.06%;
+	margin:0 2.02% 25px 0;
+	padding:0;
+	border:0;
+	border-collapse:collapse;
+	float:left;
+}
+
+.cs-tab .cs-tab-contentfigure figure{
+	position:relative;
+	width:100%;
+	height:0;
+	margin:0;
+	padding:0 0 100% 0;
+	border-collapse:separate;
+	background-color:#FFFFFF;
+	border:1px #CCC solid;
+	text-align:center;
+}
+
+.cs-tab .cs-tab-contentfigure figure img{
+	position:absolute;
+	top:0;
+	left:0;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+.cs-tab .cs-tab-contentText{
+	width:74.84%;
+	border:0;
+	border-collapse:collapse;
+	margin:0 0 0 0;
+	float:left;
+}
+
+.cs-tab .cs-tab-contentText .calls{
+	width:100%;
+	margin:0;
+	padding:0;
+	text-align:right;
+}
+
+/* Slide Button */
+
+.navBt a {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 300;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 18px;
+}
+
+navBt a:hover,
+navBt a:focus {
+	outline: none;
+}
+
+.slide-btn  {
+	position: relative;
+	z-index: 1;
+}
+
+.slide-btn a {
+	overflow: hidden;
+	margin: 0 0 25px 25px;
+}
+
+.slide-btn a span {
+	display: block;
+	padding: 10px 20px;
+	background: #464C54;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.slide-btn a::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	padding: 10px 20px;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	color: #464C54;
+	content: attr(data-hover);
+	transition: transform 0.3s;
+	-webkit-transform: translateX(-25%);
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.slide-btn a:hover span,
+.slide-btn a:focus span {
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.slide-btn a:hover::before,
+.slide-btn a:focus::before {
+	-webkit-transform: translateX(0%);
+	-moz-transform: translateX(0%);
+	transform: translateX(0%);
+}
+
+/* End Slide Button */
+
+.cs-tab .cs-tab-contentText h2{
+	display:block;
+	text-align:left;
+	margin:0 0 25px 0;
+	line-height:30px;
+	font-size:30px;
+}
+
+.cs-tab .cs-tab-contentText h3{
+	display:block;
+	text-align:left;
+	margin:50px 0 25px 0;
+	line-height:20px;
+	font-size:20px;
+}
+
+.cs-tab .cs-tab-contentText p{
+	display:block;
+	text-align:left;
+	margin:0 0 25px 0;
+	line-height:25px;
+	font-size:16px;
+}
+
+.cs-tab .cs-tab-contentText p a{
+	font-size:18px;
+	padding:0;
+	margin:0 0 0 0;
+	text-decoration:none;
+	color:#CC0001;
+}
+
+.cs-tab .cs-tab-contentText p a:hover{
+	color:#000000;
+}
+
+.cs-tab .cs-tab-contentText p span{
+	font-size:14px;
+	padding:15px 0 0 0;
+	display:inline-block;
+	margin:0;
+	color:#666666;
+}
+
+.cs-tab .cs-tab-contentText .YTPlay{
+	position:relative;
+	width:100%;
+	height:0;
+	margin:0;
+	padding:0;
+	background-color:#FFFFFF;
+	text-align:center;
+	padding-bottom:56.07%;
+}
+
+.cs-tab .cs-tab-contentText .YTPlay img{
+	position:absolute;
+	top:0;
+	left:0;
+	margin:0;
+	padding:0;
+	border:0;
+	display:block;
+}
+
+.cs-tab .cs-tab-contentText .YTPlay a{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:block;
+	margin:0;
+	padding:0;
+	border:0;
+	opacity:0.7;
+	overflow:hidden;
+}
+
+.cs-tab .cs-tab-contentText .YTPlay a:hover{
+	opacity:1;
+}
+
+.cs-tab .cs-tab-contentText .YTPlay a span{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:block;
+	margin:0;
+	padding:0;
+	border:0;
+	background:url(../images/Global/playIco.png) no-repeat center center rgba(69,76,84,0.3);
+	background-size:80px auto;
+	  -moz-transition: all 700ms cubic-bezier(0,.72,.51,1);
+  -webkit-transition: all 700ms cubic-bezier(0,.72,.51,1);
+  -o-transition: all 700ms cubic-bezier(0,.72,.51,1);
+  transition: all 700ms cubic-bezier(0,.72,.51,1);
+}
+
+.cs-tab .cs-tab-contentText .YTPlay a:hover span{
+	background:url(../images/Global/playIco.png) no-repeat center center;
+	background-size:100px auto;
+	-moz-transform:rotate(360deg);
+	-webkit-transform:rotate(360deg);
+	-o-transform:rotate(360deg);
+	transform:rotate(360deg);
+}
+
+/* inline content */
+
+	.litebox-overlay .litebox-inline-html h1 {
+		padding:0;
+		margin:0 0 20px 0;
+		font-size:38px;
+		line-height:45px;
+		font-weight:normal;
+	}
+	
+	.litebox-overlay .litebox-inline-html p {
+		padding:0;
+		margin:0;
+		font-size:19px;
+		line-height:25px;
+		font-weight:normal;
+	}
+	
+	.litebox-overlay .litebox-inline-html a.inBtCompra{
+	width:100%;
+	max-width:300px;
+	min-width:250px;
+	text-align:left;
+	height:50px;
+	font-size:24px;
+	font-weight:bold;
+	line-height:50px;
+	padding:0 0 0 20px;
+	margin:25px 0 5px 0;
+	text-decoration:none;
+	display:inline-block;
+	color:#FFFFFF;
+background: url("../images/Global/cesto.png") no-repeat center right 15px, #cc0001; /* Old browsers */
+background: url("../images/Global/cesto.png") no-repeat center right 15px, -moz-linear-gradient(top,  #cc0001 0%, #b20000 100%); /* FF3.6-15 */
+background: url("../images/Global/cesto.png") no-repeat center right 15px, -webkit-linear-gradient(top,  #cc0001 0%,#b20000 100%); /* Chrome10-25,Safari5.1-6 */
+background: url("../images/Global/cesto.png") no-repeat center right 15px, linear-gradient(to bottom,  #cc0001 0%,#b20000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0001', endColorstr='#b20000',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+.litebox-overlay .litebox-inline-html a.inBtCompra:hover{
+background: url("../images/Global/cesto.png") no-repeat center right 15px, #cc3d3d; /* Old browsers */
+background: url("../images/Global/cesto.png") no-repeat center right 15px, -moz-linear-gradient(top,  #cc3d3d 0%, #ad3434 100%); /* FF3.6-15 */
+background: url("../images/Global/cesto.png") no-repeat center right 15px, -webkit-linear-gradient(top,  #cc3d3d 0%,#ad3434 100%); /* Chrome10-25,Safari5.1-6 */
+background: url("../images/Global/cesto.png") no-repeat center right 15px, linear-gradient(to bottom,  #cc3d3d 0%,#ad3434 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3d3d', endColorstr='#ad3434',GradientType=0 ); /* IE6-9 */
+}
+
+/* End inline content */
+
+/* Media Queries */
+
+@media (max-width:1024px){
+	 .mainContent img{
+		margin-top: 15%;
+	}
+	
+	#demo-canvas{
+		display:none;
+	}
+}
+
+@media (max-width:908px){
+	 .mainContent img{
+		margin-top: 5%;
+	}
+	.article-cs-tab{
+		width:100%;
+	}
+}
+
+@media (max-width:800px){
+
+}
+
+@media (max-width:480px){
+	.mainContent{
+		padding:100px;
+	}
+	
+	.cs-tab .cs-tab-contentfigure{
+		display:none;
+	}
+
+	.cs-tab .cs-tab-contentText{
+		width:100%;
+	}
+}
+
+/*End Navigation Bar Styles*/
