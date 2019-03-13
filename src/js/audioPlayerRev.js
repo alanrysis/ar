@@ -363,6 +363,7 @@ opts = self.options;
 			dataid = $(music[i]).attr('data-id');
 			if(urlParamInit == dataid){
 				go(i);
+				currentIndex = i;
 			}
 			console.log('dataid: ', dataid);
 		}
