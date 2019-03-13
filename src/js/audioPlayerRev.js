@@ -341,6 +341,33 @@ opts = self.options;
 	  renderFrame();
 	}
 	//end audio frequency tracker
+	
+	//Go To Song Reference
+	function getUrlParameter(name) {
+		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		var results = regex.exec(location.search);
+		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	}
+
+	var urlParamInit = getUrlParameter('init');
+	console.log('init: ', urlParamInit);
+	if(urlParamInit !== ''){
+		locateAndPlayMusic(urlParamInit);
+	}
+	
+	function locateAndPlayMusic(urlParamInit){
+		
+		var dataid;
+		for(var i = 0; i < music.length; i++){
+			dataid = $(music[i]).attr('data-id');
+			if(urlParamInit == dataid){
+				go(i);
+			}
+			console.log('dataid: ', dataid);
+		}
+		
+	}
 
 };
 	
