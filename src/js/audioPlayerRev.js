@@ -37,7 +37,7 @@ opts = self.options;
 	
 	function createAmbientElements(){
 		
-		x.html('<div class="currentAudio"><div class="imgCover"><img id="cover" src="" alt=""></div><div class="infoAndControls"><div class="titleAndArtist"><h1 id="title"></h1><h2 id="artist"></h2></div><div id="playerControls"><div class="timeContainer"><div id="currentTime">0:00</div><div id="totalTime">5:32</div></div><div class="progressBarContainer"><div id="progressBar"></div></div><div class="controls"><a class="btLoop"></a><a class="btPrev"></a><a class="btPlay"></a><a class="btNext"></a><a class="btMute"></a></div></div><a class="btBuy" href="#" target="_blank"></a><div class="share"><div class="shareLinks"></div><a class="btShare"></a></div></div></div><audio id="audioElement" controls style="display: none;" preload="metadata"><source id="audioElementSource" src="" type="audio/mp3"></audio><audio id="audioElement2" controls style="display: none;" preload="metadata"><source id="audioElementSource2" src="" type="audio/mp3"></audio>');
+		x.html('<div class="currentAudio"><div class="imgCover"><img id="cover" src="" alt=""></div><div class="infoAndControls"><div class="titleAndArtist"><h1 id="title"></h1><h2 id="artist"></h2></div><div id="playerControls"><div class="timeContainer"><div id="currentTime">0:00</div><div id="totalTime">5:32</div></div><div class="progressBarContainer"><div id="progressBar"></div></div><div class="controls"><a class="btLoop"></a><a class="btPrev"></a><a class="btPlay"></a><a class="btNext"></a><a class="btMute"></a></div></div><div class="buy"><div class="buyLinks"></div><a class="btBuy"></a></div><div class="share"><div class="shareLinks"></div><a class="btShare"></a></div></div></div><audio id="audioElement" controls style="display: none;" preload="metadata"><source id="audioElementSource" src="" type="audio/mp3"></audio><audio id="audioElement2" controls style="display: none;" preload="metadata"><source id="audioElementSource2" src="" type="audio/mp3"></audio>');
 		
 	}
 	
@@ -64,9 +64,33 @@ opts = self.options;
 		$('#audioElementSource2').attr('src', currentAudio.audioSrc);
 		$('#title').html(currentAudio.title);
 		$('#artist').html(currentAudio.author);
+		
+		$('.buyLinks').html('');
+		
 		if(typeof currentAudio.buyLink !== typeof undefined){
+			currentAudio.buyLink = currentAudio.buyLink.split(';');
 			$('.btBuy').css('display','block');
-			$('.btBuy').attr('href', currentAudio.buyLink);
+			console.log('currentAudio.buyLink: ', currentAudio.buyLink);
+			
+			for(var j = 0; j < currentAudio.buyLink.length; j++){
+				
+				if(currentAudio.buyLink[j].indexOf('itunes') !== -1){
+					$('.buyLinks').append('<a class="itunesBuy" href="' + currentAudio.buyLink[j] + '" target="_blank"></a>');
+				}
+
+				if(currentAudio.buyLink[j].indexOf('spotify') !== -1){
+					$('.buyLinks').append('<a class="spotifyBuy" href="' + currentAudio.buyLink[j] + '" target="_blank"></a>');
+				}
+
+				if(currentAudio.buyLink[j].indexOf('amazon') !== -1){
+					$('.buyLinks').append('<a class="amazonBuy" href="' + currentAudio.buyLink[j] + '" target="_blank"></a>');
+				}
+				
+				if(currentAudio.buyLink[j].indexOf('google') !== -1){
+					$('.buyLinks').append('<a class="googleBuy" href="' + currentAudio.buyLink[j] + '" target="_blank"></a>');
+				}
+			}
+			
 		} else {
 			$('.btBuy').css('display','none');
 		}
@@ -109,6 +133,25 @@ opts = self.options;
 			$(this).parent().removeClass('open');
 			$(this).parent().css('top', shareDivTop);
 			shareState = false;
+		}
+	});
+	
+	var buyState = false;
+	var buyDivTop = parseInt($('.buy').css('top'));
+	console.log('buyDivTop: ', buyDivTop);
+	
+	$('.btBuy').on('click', function(e){
+		var injectedHeight2;
+		e.preventDefault();
+		if(!buyState){
+			$(this).parent().addClass('open');
+			injectedHeight2 = buyDivTop - $(this).parent().height() + $(this).height();
+			$(this).parent().css('top', injectedHeight2 + 'px');
+			buyState = true;
+		} else {
+			$(this).parent().removeClass('open');
+			$(this).parent().css('top', buyDivTop);
+			buyState = false;
 		}
 	});
 	

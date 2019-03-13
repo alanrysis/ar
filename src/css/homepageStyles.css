@@ -111,17 +111,143 @@ html{
 	/*background-color: blanchedalmond;*/
 }
 
-.mainSidePlayer .currentAudio .infoAndControls .btBuy{
+.mainSidePlayer .currentAudio .infoAndControls .buy{
 	position: absolute;
 	top:5px;
 	right:5px;
 	display: inline-block;
+	width: 40px;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(255,255,255,0.9);
+	opacity: 1;
+	overflow: hidden;
+	border-radius: 50px;
+	-webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.2);
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy.open{
+	position: absolute;
+	top:5px;
+	right:5px;
+	display: inline-block;
+	width: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy .btBuy{
+	display: block;
 	width: 40px;
 	height: 40px;
 	padding: 0;
 	margin: 0;
 	/*background-color: blue;*/
 	background-image: url(../images/Global/buyIco.png);
+	background-size: 30px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy.open .btBuy{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/buyIco.png);
+	background-size: 30px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 0.4;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy .buyLinks{
+	display: block;
+	width: 40px;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	cursor: pointer;
+	opacity: 1;
+	overflow: hidden;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy.open .buyLinks{
+	display: block;
+	width: 40px;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	opacity: 1;
+	background-color: rgba(255,255,255,0.9);
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy .buyLinks a.itunesBuy{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/itunesLogo.png);
+	background-size: 30px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy .buyLinks a.spotifyBuy{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/spotifyLogo.png);
+	background-size: 30px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy .buyLinks a.amazonBuy{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/amazonMusicLogo.png);
+	background-size: 30px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.mainSidePlayer .currentAudio .infoAndControls .buy .buyLinks a.googleBuy{
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	background-image: url(../images/Global/googleMusicLogo.png);
 	background-size: 30px auto;
 	background-position: center center;
 	background-repeat: no-repeat;
