@@ -21,9 +21,9 @@
 <link rel="stylesheet" href="../src/css/CommonStyles.css">
 <link rel="stylesheet" href="../src/css/megafish.css">
 <link rel="stylesheet" href="../src/css/navigationStyles.css">
+<link rel="stylesheet" href="../src/css/litebox.css">
 <link rel="stylesheet" href="../src/css/relMusicStyles.css">
 <link rel="stylesheet" href="../src/css/mobileNavigationStyles.css">
-<link rel="stylesheet" href="../src/css/litebox.css">
 <script src="../src/js/jquery-1.11.1.js"></script>
 <script src="../src/js/hoverIntent.js"></script>
 <script src="../src/js/superfish.js"></script>
@@ -138,7 +138,7 @@
         <p>A tune that marks a new beginning, a new fase, a new way of life, the right way to take!<br>Full of energy and melody, it was created to be a mainstage shaker!</p>
         <div class="calls">
         	<div class="navBt slide-btn fRight">
-      			<a class="track" data-tracking="ref=etebasileBuy" href="#" data-name="Alan Rysis - Etebasile" data-hover="Buy this track" target="_self"><span>Buy this track</span></a>
+      			<a class="buyBtLink liteboxMsg track" data-tracking="ref=etebasileBuy" href="#buyMusic" data-name="Alan Rysis - Etebasile" data-img-cover="../src/images/Music/standardUnreleased.jpg" data-link-itunes="https://geo.itunes.apple.com/us/album/ar/123456?mt=1&app=music" data-link-spotify="https://open.spotify.com/album/xpto" data-link-amazon="https://music.amazon.com/albums/xpto" data-link-google="https://play.google.com/store/music/artist?id=xpto" data-hover="Buy this track" target="_self"><span>Buy this track</span></a>
     		</div>
             <div class="navBt slide-btn fRight">
       			<a class="liteboxMsg track" data-tracking="ref=etebasileSupport" href="#giveSupport" data-name="Alan Rysis - Etebasile" data-hover="Support this track" target="_blank"><span>Support this track</span></a>
@@ -165,6 +165,20 @@
       		<a style="margin:0 0 0 0;" href="#" data-hover="Send email" target="_blank"><span>Send email</span></a>
     	</div>
 	</div>
+	<div id="buyMusic">
+   		<figure>
+   			<img id="imgCover" src="../src/images/Music/standardUnreleased.jpg" alt="Cover">
+		</figure>
+   		<figcaption>
+    		<h1 id="musicTitle">Alan Rysis</h1>
+			<p style="margin-bottom: 50px;">Thank you for supporting this track, I hope you enjoy playing this tune as much as I do.</p>
+			<p>Please, choose your favourite store:</p>
+        	<a class="icon" id="itunesBt" href="" target="_blank"><img src="../src/images/Global/itunesLogo.png" alt="iTunes"></a>
+			<a class="icon" id="spotifyBt" href="" target="_blank"><img src="../src/images/Global/spotifyLogo.png" alt="Spotify"></a>
+			<a class="icon" id="amazonBt" href="" target="_blank"><img src="../src/images/Global/amazonMusicLogo.png" alt="Amazon Music"></a>
+			<a class="icon" id="googleBt" href="" target="_blank"><img src="../src/images/Global/googleMusicLogo.png" alt="Google Play Music"></a>
+		</figcaption>
+	</div>
 </div>
 <!-- End Inline Html -->
 <script>
@@ -177,9 +191,17 @@ $(document).ready(function() {
 	
 	$('.slide-btn a').on( "click", function() {
 		$('#giveSupport p span').html($(this).attr('data-name'));
-		$('#giveSupport .standardlink2').attr('href','mailto:alanrysis@gmail.com?Subject='+ encodeURI($(this).attr('data-name'))+ ' | Support');
-		$('#giveSupport .slide-btn a').attr('href','mailto:alanrysis@gmail.com?Subject='+ encodeURI($(this).attr('data-name'))+ ' | Support');
+		$('#giveSupport .standardlink2').attr('href','mailto:alanrysis@gmail.com?Subject='+ encodeURI($(this).attr('data-name'))+ '%20%7C%20Support');
+		$('#giveSupport .slide-btn a').attr('href','mailto:alanrysis@gmail.com?Subject='+ encodeURI($(this).attr('data-name'))+ '%20%7C%20Support');
 		
+	});
+	
+	$('.buyBtLink').on( "click", function() {
+		$('#musicTitle').html($(this).attr('data-name'));
+		$('#itunesBt').attr('href', $(this).attr('data-link-itunes'));
+		$('#spotifyBt').attr('href', $(this).attr('data-link-spotify'));
+		$('#amazonBt').attr('href', $(this).attr('data-link-amazon'));
+		$('#googleBt').attr('href', $(this).attr('data-link-google'));
 	});
 	
 	/* Mobile Navigation */
