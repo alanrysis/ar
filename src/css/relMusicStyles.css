@@ -367,6 +367,51 @@ background: url("../images/Global/cesto.png") no-repeat center right 15px, linea
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3d3d', endColorstr='#ad3434',GradientType=0 ); /* IE6-9 */
 }
 
+	.litebox-overlay .litebox-inline-html figure{
+		position: relative;
+		width:27.5%;
+		height:auto;
+		padding:0;
+		margin:0 3.16% 0 0;
+		float: left;
+	}
+
+	.litebox-overlay .litebox-inline-html figure img{
+		width:100%;
+		max-width: 100%;
+		max-height: auto;
+		padding:0;
+		margin:0;
+		display: block;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+	.litebox-overlay .litebox-inline-html figcaption{
+		width:69.34%;
+		margin:0;
+		float: left;
+	}
+
+	.litebox-overlay .litebox-inline-html figcaption a.icon{
+		display: inline-block;
+		width:60px;
+		height:auto;
+		padding:0;
+		margin:15px 15px 0 0;
+	}
+
+	.litebox-overlay .litebox-inline-html figcaption a.icon img{
+		display: inline-block;
+		width:100%;
+		max-width: 100%;
+		height:auto;
+		padding:0;
+		margin:0;
+		box-shadow: none;
+	}
+
 /* End inline content */
 
 /* Media Queries */
@@ -405,6 +450,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc3d3d', end
 
 	.cs-tab .cs-tab-contentText{
 		width:100%;
+	}
+	
+	.litebox-overlay .litebox-inline-html figure{
+		display: none;
+	}
+
+	.litebox-overlay .litebox-inline-html figcaption{
+		width: 100%;
 	}
 }
 

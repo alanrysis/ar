@@ -36,8 +36,8 @@ $(function() {
             var closest = [];
             var p1 = points[i];
             for(var j = 0; j < points.length; j++) {
-                var p2 = points[j]
-                if(!(p1 == p2)) {
+                var p2 = points[j];
+                if(p1 !== p2) {
                     var placed = false;
                     for(var k = 0; k < 5; k++) {
                         if(!placed) {
@@ -48,10 +48,10 @@ $(function() {
                         }
                     }
 
-                    for(var k = 0; k < 5; k++) {
+                    for(var l = 0; l < 5; l++) {
                         if(!placed) {
-                            if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
-                                closest[k] = p2;
+                            if(getDistance(p1, p2) < getDistance(p1, closest[l])) {
+                                closest[l] = p2;
                                 placed = true;
                             }
                         }
@@ -62,9 +62,9 @@ $(function() {
         }
 
         // assign a circle to each point
-        for(var i in points) {
-            var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
-            points[i].circle = c;
+        for (var m = 0; m < points.length; m++) {
+            var c = new Circle(points[m], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
+            points[m].circle = c;
         }
     }
 
@@ -78,7 +78,8 @@ $(function() {
     }
 
     function mouseMove(e) {
-        var posx = posy = 0;
+        var posx = 0;
+		var posy = 0;
         if (e.pageX || e.pageY) {
             posx = e.pageX;
             posy = e.pageY;
@@ -92,13 +93,12 @@ $(function() {
     }
 
     function scrollCheck() {
-        if(document.body.scrollTop > height) animateHeader = false;
-        else animateHeader = true;
+        if(document.body.scrollTop > height){ animateHeader = false;}else{ animateHeader = true;}
     }
 
     function resize() {
-        width = $(document).width();
-        height = $(document).height();
+        width = window.innerWidth;
+        height = window.innerHeight;
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
@@ -107,7 +107,7 @@ $(function() {
     // animation
     function initAnimation() {
         animate();
-        for(var i in points) {
+        for (var i = 0; i < points.length; i++) {
             shiftPoint(points[i]);
         }
     }
@@ -148,8 +148,8 @@ $(function() {
 
     // Canvas manipulation
     function drawLines(p) {
-        if(!p.active) return;
-        for(var i in p.closest) {
+        if(!p.active){ return;}
+		for (var i = 0; i < p.closest.length; i++) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
@@ -169,7 +169,7 @@ $(function() {
         })();
 
         this.draw = function() {
-            if(!_this.active) return;
+            if(!_this.active){ return; }
             ctx.beginPath();
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
             ctx.fillStyle = 'rgba(70,76,86,'+ _this.active+')';
@@ -182,4 +182,4 @@ $(function() {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
     
-})();// JavaScript Document
+});// JavaScript Document
