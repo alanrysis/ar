@@ -246,9 +246,9 @@ div#preload { display: none; }
 	
 	<div id="audioPlayerRev" class="mainSidePlayer">
 		<ul>
-			<li class="music" data-id="thetune" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/SinglePlayer.mp3" data-title="The Tune" data-author="Alan Rysis" data-buy-link="https://geo.itunes.apple.com/us/album/ar/123456?mt=1&app=music;https://open.spotify.com/album/xpto;https://music.amazon.com/albums/xpto;https://play.google.com/store/music/artist?id=xpto" data-share-link="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dthetune;https://twitter.com/intent/tweet?url=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20The%20Tune"></li>
+			<li class="music" data-id="thetune" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/SinglePlayer.mp3" data-title="The Tune" data-author="Alan Rysis" data-buy-link="https://geo.itunes.apple.com/us/album/ar/123456?mt=1&app=music;https://open.spotify.com/album/xpto;https://music.amazon.com/albums/xpto;https://play.google.com/store/music/artist?id=xpto" data-share-link="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dthetune;https://twitter.com/intent/tweet?url=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20The%20Tune;fb-messenger://share/?link=http%3A%2F%2Falanrysis.com%2F%3Finit%3Dthetune;whatsapp://send?text=Hey there, when you have some spare time, check this out and hit play: http://alanrysis.com/?init=thetune;http%3A%2F%2Falanrysis.com%2F%3Finit%3Dthetune"></li>
 			
-			<li class="music" data-id="supermario" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/supermario.mp3" data-title="Super Mario" data-author="Mario" data-share-link="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dsupermario;https://twitter.com/intent/tweet?url=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20Super%20Mario"></li>
+			<li class="music" data-id="supermario" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/supermario.mp3" data-title="Super Mario" data-author="Mario" data-share-link="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dsupermario;https://twitter.com/intent/tweet?url=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20The%20Tune;fb-messenger://share/?link=http%3A%2F%2Falanrysis.com%2F%3Finit%3Dsupermario;whatsapp://send?text=Hey there, when you have some spare time, check this out and hit play: http://alanrysis.com/?init=supermario;http%3A%2F%2Falanrysis.com%2F%3Finit%3Dsupermario"></li>
 			<!--
 			<li class="music" data-id="waswere" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/audio2.mp3" data-title="Was were" data-author="Alan Rysis" data-share-link="https://twitter.com/intent/tweet?url=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20Was%20Were;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dwaswere"></li>
 			-->
@@ -289,9 +289,10 @@ $(document).ready(function() {
 	});
 	/* End Mobile Navigation */
 	
-	
-	$('#audioPlayerRev').audioPlayerRev();
-	
+	$('#audioPlayerRev').audioPlayerRev({
+		loop: true,
+		apiAnimateElements: true
+    });
 	
 	// flashImages script
 	var _flashObj = $('#flashImages'),
