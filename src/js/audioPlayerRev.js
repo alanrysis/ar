@@ -1,10 +1,20 @@
-//RIC Automatic Slideshow
+/**
+ * Revolution Audio Player v1.0
+ * Most modern mobile compatible Audio Player with hardware accelerated transitions and Audio API interaction
+ *
+ * Copyright 2018 Ricardo Cardoso
+ *
+ * Released on: Mar 14, 2018
+ * Location: Porto
+ * License : All rights reserved
+*/
 
 ;(function ( $, window, document, undefined ) {
 	
 var pluginName = 'audioPlayerRev',
         defaults = {
-			loop: true
+			loop: true,
+			apiAnimateElements: false
         };
 
 function audioPlayerRev(element, options) {
@@ -23,12 +33,13 @@ opts = self.options;
 		
 	//Options
 	var loop = opts.loop;
+	var apiAnimateElements = opts.apiAnimateElements;
 	
 	var x = $(self.element);
 	var boardBackup = x.html();
 	
 	var music = $(self.element).find(".music");
-	console.log('music: ', music);
+	//console.log('music: ', music);
 	
 	var groups = x.find("ul");
 	var currentGroup = 0;
@@ -70,7 +81,7 @@ opts = self.options;
 		if(typeof currentAudio.buyLink !== typeof undefined){
 			currentAudio.buyLink = currentAudio.buyLink.split(';');
 			$('.btBuy').css('display','block');
-			console.log('currentAudio.buyLink: ', currentAudio.buyLink);
+			//console.log('currentAudio.buyLink: ', currentAudio.buyLink);
 			
 			for(var j = 0; j < currentAudio.buyLink.length; j++){
 				
@@ -95,12 +106,12 @@ opts = self.options;
 			$('.btBuy').css('display','none');
 		}
 		//$('.btShare').attr('href', currentAudio.shareLink);
-		console.log('currentAudio.shareLink: ', currentAudio.shareLink);
+		//console.log('currentAudio.shareLink: ', currentAudio.shareLink);
 		
 		$('.shareLinks').html('');
 		
 		for(var i = 0; i < currentAudio.shareLink.length; i++){
-			console.log(currentAudio.shareLink[i]);
+			//console.log(currentAudio.shareLink[i]);
 			if(currentAudio.shareLink[i].indexOf('facebook') !== -1){
 				$('.shareLinks').append('<a class="facebookShare" href="' + currentAudio.shareLink[i] + '" target="_blank"></a>');
 			}
@@ -112,14 +123,22 @@ opts = self.options;
 			if(currentAudio.shareLink[i].indexOf('instagram') !== -1){
 				$('.shareLinks').append('<a class="instagramShare" href="' + currentAudio.shareLink[i] + '" target="_blank"></a>');
 			}
+			
+			if(currentAudio.shareLink[i].indexOf('whatsapp') !== -1){
+				$('.shareLinks').append('<a class="whatsappShare" href="' + currentAudio.shareLink[i] + '" target="_blank"></a>');
+			}
+			
+			if(currentAudio.shareLink[i].indexOf('messenger') !== -1){
+				$('.shareLinks').append('<a class="messengerShare" href="' + currentAudio.shareLink[i] + '" target="_blank"></a>');
+			}
 		}
 		
-		console.log('currentAudio: ', currentAudio);
+		//console.log('currentAudio: ', currentAudio);
 	}
 	
 	var shareState = false;
 	var shareDivTop = parseInt($('.share').css('top'));
-	console.log('shareDivTop: ', shareDivTop);
+	//console.log('shareDivTop: ', shareDivTop);
 	
 	$('.btShare').on('click', function(e){
 		var injectedHeight;
@@ -138,7 +157,7 @@ opts = self.options;
 	
 	var buyState = false;
 	var buyDivTop = parseInt($('.buy').css('top'));
-	console.log('buyDivTop: ', buyDivTop);
+	//console.log('buyDivTop: ', buyDivTop);
 	
 	$('.btBuy').on('click', function(e){
 		var injectedHeight2;
@@ -181,7 +200,7 @@ opts = self.options;
 	}
 	
 	audioElement.onloadedmetadata = function() {
-    	console.log('audioElement.duration: ', audioElement.duration);
+    	//console.log('audioElement.duration: ', audioElement.duration);
 		$('#totalTime').html(pad(parseInt(audioElement.duration / 60)) + ":" + pad(parseInt(audioElement.duration % 60)));
 	};
 
@@ -223,7 +242,7 @@ opts = self.options;
 		var offset = $(this).offset();
 		var xPosition = e.pageX - offset.left;
 		var perc = (xPosition / $('.progressBarContainer').width());
-		console.log(perc);
+		//console.log(perc);
 		
 		audioElement.pause();
 		audioElement2.pause();
@@ -303,7 +322,7 @@ opts = self.options;
 			audioElement2.load();
 			audioElement2.currentTime = 0;
 			audioElement2.play();
-			console.log("CurrentIndex: ", currentIndex);
+			//console.log("CurrentIndex: ", currentIndex);
 		}
 	});
 	
@@ -381,7 +400,10 @@ opts = self.options;
 			  $('#flashImages').css('display', 'none');
 		  }
 	  }
-	  renderFrame();
+	
+	  if(apiAnimateElements){
+	  	renderFrame();
+	  }
 	}
 	//end audio frequency tracker
 	
@@ -394,7 +416,7 @@ opts = self.options;
 	}
 
 	var urlParamInit = getUrlParameter('init');
-	console.log('init: ', urlParamInit);
+	//console.log('init: ', urlParamInit);
 	if(urlParamInit !== ''){
 		locateAndPlayMusic(urlParamInit);
 	}
@@ -408,7 +430,7 @@ opts = self.options;
 				go(i);
 				currentIndex = i;
 			}
-			console.log('dataid: ', dataid);
+			//console.log('dataid: ', dataid);
 		}
 		
 	}
