@@ -221,6 +221,7 @@ opts = self.options;
 			audioElement2.pause();
 			audioPaused = true;
 			clearInterval(playingInterval);
+			$('.whiteFlash').css('display','none');
 		}
 		
 	});
@@ -367,6 +368,11 @@ opts = self.options;
 	
 	//audio frequency
 	
+	var kickingInterval;
+	var isKicking = true;
+	var hiHZHigh = false;
+	var kickControlfreq = 0;
+	
 	function createAnalyser (){
 	  var ctx = new AudioContext();
 	  var audio = audioElement2;
@@ -388,7 +394,7 @@ opts = self.options;
 		 analyser.getByteFrequencyData(frequencyData);
 		 // render frame based on values in frequencyData
 		 //console.log(frequencyData);
-		  
+		  var kickControlDif = 0;
 		 //Aminate some element on the page
 		  var transformScaleValue = ((frequencyData[5] / 255) * 0.2) + 0.9;
 		  var transformScaleValue2 = ((frequencyData[50] / 255) * 0.2) + 0.9;
@@ -399,10 +405,47 @@ opts = self.options;
 		  } else {
 			  $('#flashImages').css('display', 'none');
 		  }
+		  
+		  if(frequencyData[0] > 180){
+			  kickControlfreq++;
+		  } else {
+			  kickControlfreq = 0;
+		  }
+		  
+		  if(frequencyData[50] > 180){
+			  hiHZHigh = true;
+		  } else {
+			  hiHZHigh = false;
+		  }
 	  }
 	
+	  $(window).resize(function(){
+		  if($(window).width() < 800){
+			  clearInterval(kickingInterval);
+		  }
+	  });
+		
 	  if(apiAnimateElements){
 	  	renderFrame();
+		  if($(window).width() > 800){
+			  kickingInterval = setInterval(function(){
+				  if(kickControlfreq > 0){
+					  //if is kicking
+					  //console.log("Kick!");
+					  isKicking = true;
+				  } else {
+					  isKicking = false;
+				  }
+
+				  if(isKicking){
+					  $('.whiteFlash').css('display','none');
+				  } else {
+					  if(hiHZHigh) {
+						$('.whiteFlash').css('display','block');
+					  }
+				  }
+			  }, 200);
+		  }
 	  }
 	}
 	//end audio frequency tracker
