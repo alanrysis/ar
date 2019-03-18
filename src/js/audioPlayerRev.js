@@ -400,7 +400,7 @@ opts = self.options;
 		  var transformScaleValue2 = ((frequencyData[50] / 255) * 0.2) + 0.9;
 		  $('#imgLogoAnim').css('transform', 'scale(' + transformScaleValue + ')');
 		  //console.log('transformScaleValue: ', transformScaleValue);
-		  if(transformScaleValue2 > 1.05){
+		  if(transformScaleValue2 > 1.04){
 			  $('#flashImages').css('display', 'block');
 		  } else {
 			  $('#flashImages').css('display', 'none');

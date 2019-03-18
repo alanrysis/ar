@@ -317,6 +317,25 @@ navBt a:focus {
 	transform:rotate(360deg);
 }
 
+.cs-tab .cs-tab-contentText .YTPlay a.btComingSoon{
+	position:absolute;
+	display: table;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	overflow:hidden;
+	cursor: pointer;
+	text-decoration: none;
+	background:url(../images/Global/comingSoonIco.png) no-repeat center center;
+	background-size:150px auto;
+	background-color: rgba(69,76,84,0.5);
+	opacity: 1;
+}
+
 /* inline content */
 
 	.litebox-overlay .litebox-inline-html h1 {
