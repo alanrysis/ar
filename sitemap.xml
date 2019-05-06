@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
   <loc>https://alanrysis.com/</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://alanrysis.com/index.html</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alanrysis.com/News/news.html</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alanrysis.com/Music/released.html</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alanrysis.com/Music/previews.html</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alanrysis.com/Videos/videos.html</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alanrysis.com/Biography/biography.html</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://alanrysis.com/Contact/contact.html</loc>
-  <lastmod>2019-05-03T14:39:30+00:00</lastmod>
+  <lastmod>2019-05-06T10:58:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
+
 </urlset>
