@@ -2,10 +2,9 @@
  * Revolution Audio Player v1.0
  * Most modern mobile compatible Audio Player with hardware accelerated transitions and Audio API interaction
  *
- * Copyright 2018 Ricardo Cardoso
+ * Copyright 2019 Alan Rysis
  *
- * Released on: Mar 14, 2018
- * Location: Porto
+ * Released on: Mai 6, 2019
  * License : All rights reserved
 */
 
@@ -14,7 +13,8 @@
 var pluginName = 'audioPlayerRev',
         defaults = {
 			loop: true,
-			apiAnimateElements: false
+			apiAnimateElements: false,
+			trackEvents: true
         };
 
 function audioPlayerRev(element, options) {
@@ -34,6 +34,7 @@ opts = self.options;
 	//Options
 	var loop = opts.loop;
 	var apiAnimateElements = opts.apiAnimateElements;
+	var trackEvents = opts.trackEvents;
 	
 	var x = $(self.element);
 	var boardBackup = x.html();
@@ -76,6 +77,10 @@ opts = self.options;
 		$('#title').html(currentAudio.title);
 		$('#artist').html(currentAudio.author);
 		
+		
+		if(trackEvents){
+			$('.buyLinks a').unbind();
+		}
 		$('.buyLinks').html('');
 		
 		if(typeof currentAudio.buyLink !== typeof undefined){
@@ -102,12 +107,21 @@ opts = self.options;
 				}
 			}
 			
+			if(trackEvents){
+				$('.buyLinks a').on('click', function(){
+					//trackEvents
+					addTrackingTags('inter=btBuy&title=' + encodeURI($(music[currentIndex]).attr('data-title')) + '&store=' + $(this).attr('class'));
+				});
+			}
+			
 		} else {
 			$('.btBuy').css('display','none');
 		}
 		//$('.btShare').attr('href', currentAudio.shareLink);
 		//console.log('currentAudio.shareLink: ', currentAudio.shareLink);
-		
+		if(trackEvents){
+			$('.shareLinks a').unbind();
+		}
 		$('.shareLinks').html('');
 		
 		for(var i = 0; i < currentAudio.shareLink.length; i++){
@@ -132,8 +146,32 @@ opts = self.options;
 				$('.shareLinks').append('<a class="messengerShare" href="' + currentAudio.shareLink[i] + '" target="_blank"></a>');
 			}
 		}
-		
+		if(trackEvents){
+			$('.shareLinks a').on('click', function(){
+				//trackEvents
+				addTrackingTags('inter=btShare&title=' + encodeURI($(music[currentIndex]).attr('data-title')) + '&to=' + $(this).attr('class'));
+			});
+		}
 		//console.log('currentAudio: ', currentAudio);
+		
+		if(trackEvents){
+			addTrackingTags('state=moveTo&title=' + encodeURI($(music[currentIndex]).attr('data-title')));
+		}
+	}
+	
+	//Tracking Stuff
+	function addTrackingTags(queryString){
+		
+		if (history.pushState) {
+			
+			setTimeout(function() {
+				var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + queryString;
+				window.history.pushState({path:newurl},'',newurl);
+				ga('send', 'pageview', {'page': location.pathname+location.search+location.hash});
+			}, 700);
+			
+		}
+		
 	}
 	
 	var shareState = false;
@@ -153,6 +191,11 @@ opts = self.options;
 			$(this).parent().css('top', shareDivTop);
 			shareState = false;
 		}
+		
+		if(trackEvents){
+			addTrackingTags('inter=btShare&title=' + encodeURI($(music[currentIndex]).attr('data-title')));
+		}
+		
 	});
 	
 	var buyState = false;
@@ -172,6 +215,11 @@ opts = self.options;
 			$(this).parent().css('top', buyDivTop);
 			buyState = false;
 		}
+		
+		if(trackEvents){
+			addTrackingTags('inter=btBuy&title=' + encodeURI($(music[currentIndex]).attr('data-title')));
+		}
+		
 	});
 	
 	var audioElement = document.getElementById('audioElement');
@@ -215,6 +263,11 @@ opts = self.options;
 			audioElement.play();
 			audioElement2.play();
 			audioPaused = false;
+			
+			if(trackEvents){
+				addTrackingTags('inter=Playing&title=' + encodeURI($(music[currentIndex]).attr('data-title')));
+			}
+			
 		} else {
 			$(this).removeClass('playing');
 			audioElement.pause();
@@ -222,8 +275,13 @@ opts = self.options;
 			audioPaused = true;
 			clearInterval(playingInterval);
 			$('.whiteFlash').css('display','none');
+			
+			if(trackEvents){
+				addTrackingTags('inter=Paused&title=' + encodeURI($(music[currentIndex]).attr('data-title')));
+			}
+			
 		}
-		
+
 	});
 	
 	function updateProgressValues(){
