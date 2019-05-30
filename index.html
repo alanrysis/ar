@@ -229,7 +229,6 @@ div#preload { display: none; }
 	<div class="whiteFlash"></div>
 	<div id="preload">
 	   <img src="src/images/Homepage/giphy1.gif" width="1" height="1" alt="Image 01">
-	   <img src="src/images/Homepage/giphy2.gif" width="1" height="1" alt="Image 02">
 	   <img src="src/images/Homepage/giphy3.gif" width="1" height="1" alt="Image 03">
 	   <img src="src/images/Homepage/giphy4.gif" width="1" height="1" alt="Image 04">
 	   <img src="src/images/Homepage/giphy5.gif" width="1" height="1" alt="Image 05">
@@ -247,6 +246,9 @@ div#preload { display: none; }
 	
 	<div id="audioPlayerRev" class="mainSidePlayer">
 		<ul>
+			
+			<li class="music" data-id="daretobegin" data-img-cover="src/images/Music/AlanRysisCapaDareToBegin2.png" data-audio-src="src/audio/DareToBegin.mp3" data-title="Dare to Begin" data-author="Alan Rysis" data-buy-link="http://itunes.apple.com/album/id1465906932?ls=1&app=itunes;https://open.spotify.com/album/4KdTfhdB31Los5obLPeFy1?si=kAp5O4KBTACE637RB85fAg;https://music.amazon.com/albums/B07SFZB7L6?tab=CATALOG;https://play.google.com/store/music/album/Alan_Rysis_Dare_to_Begin?id=B2tvezvotcdc6fdhdxrj3ejltwy&hl=en" data-share-link="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Ddaretobegin;https://twitter.com/intent/tweet?url=https%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20The%20Tune;fb-messenger://share/?link=https%3A%2F%2Falanrysis.com%2F%3Finit%3Ddaretobegin;whatsapp://send?text=Hey there, when you have some spare time, check this out and hit play: https://alanrysis.com/?init=daretobegin;https%3A%2F%2Falanrysis.com%2F%3Finit%3Ddaretobegin"></li>
+			
 			<li class="music" data-id="thesignal" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/thesignal.mp3" data-title="The Signal" data-author="Alan Rysis" data-share-link="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dthesignal;https://twitter.com/intent/tweet?url=https%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20The%20Tune;fb-messenger://share/?link=https%3A%2F%2Falanrysis.com%2F%3Finit%3Dthesignal;whatsapp://send?text=Hey there, when you have some spare time, check this out and hit play: https://alanrysis.com/?init=thesignal;https%3A%2F%2Falanrysis.com%2F%3Finit%3Dthesignal"></li>
 			
 			<!--<li class="music" data-id="thetune" data-img-cover="src/images/Biography/AlanRysisLogo_s.jpg" data-audio-src="src/audio/SinglePlayer.mp3" data-title="The Tune" data-author="Alan Rysis" data-buy-link="https://geo.itunes.apple.com/us/album/ar/123456?mt=1&app=music;https://open.spotify.com/album/xpto;https://music.amazon.com/albums/xpto;https://play.google.com/store/music/artist?id=xpto" data-share-link="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dthetune;https://twitter.com/intent/tweet?url=https%3A%2F%2Falanrysis.com%2Findex.html%3Finit%3Dbe&text=Alan%20Rysis%20-%20The%20Tune;fb-messenger://share/?link=https%3A%2F%2Falanrysis.com%2F%3Finit%3Dthetune;whatsapp://send?text=Hey there, when you have some spare time, check this out and hit play: https://alanrysis.com/?init=thetune;https%3A%2F%2Falanrysis.com%2F%3Finit%3Dthetune"></li>-->
@@ -306,7 +308,25 @@ $(document).ready(function() {
         vLeftRandom,
 		vScaleRandom,
         content = new Array(/*
-"&#9732;","&#9733;","&#9734;","&#9786;","&#9859;","&#9861;","&#9881;","&#9885;","&#9991;","&#10025;","&#10026;","&#10027;","&#10028;","&#10029;","&#10030;","&#10031;","&#12951;","&#12953;","&#128246;","&#128267;","&#128266;","🕉","✡️","割","指","㊗","㊙", "<p class='text'>Elements</p>", "<p class='text'>Connection</p>", "<p class='text'>Meaning</p>", "<p class='text'>Expression</p>", "<p class='text'>Objective</p>", "<p class='text'>Path</p>", "<p class='text'>Explore</p>", "<p class='text'>Create</p>", "<p class='text'>Believe</p>", */"<img src='src/images/Homepage/giphy1.gif' alt='Gif1'>", "<img src='src/images/Homepage/giphy2.gif' alt='Gif2'>", "<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>", "<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>", "<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>", "<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>", "<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>", "<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>", "<img src='src/images/Homepage/giphy5.gif' alt='Gif5'>", "<img src='src/images/Homepage/giphy6.gif' alt='Gif6'>", "<img src='src/images/Homepage/giphy7.gif' alt='Gif7'>", "<img src='src/images/Homepage/giphy8.gif' alt='Gif8'>", "<img src='src/images/Homepage/giphy9.gif' alt='Gif9'>", "<img src='src/images/Homepage/giphy10.gif' alt='Gif10'>", "<img src='src/images/Homepage/giphy11.gif' alt='Gif11'>", "<img src='src/images/Homepage/giphy12.gif' alt='Gif12'>", "<img src='src/images/Homepage/giphy13.gif' alt='Gif13'>", "<img src='src/images/Homepage/giphy14.gif' alt='Gif14'>", "<img src='src/images/Homepage/giphy15.gif' alt='Gif15'>" );
+"&#9732;","&#9733;","&#9734;","&#9786;","&#9859;","&#9861;","&#9881;","&#9885;","&#9991;","&#10025;","&#10026;","&#10027;","&#10028;","&#10029;","&#10030;","&#10031;","&#12951;","&#12953;","&#128246;","&#128267;","&#128266;","🕉","✡️","割","指","㊗","㊙", "<p class='text'>Elements</p>", "<p class='text'>Connection</p>", "<p class='text'>Meaning</p>", "<p class='text'>Expression</p>", "<p class='text'>Objective</p>", "<p class='text'>Path</p>", "<p class='text'>Explore</p>", "<p class='text'>Create</p>", "<p class='text'>Believe</p>", */
+			"<img src='src/images/Homepage/giphy1.gif' alt='Gif1'>",
+			"<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>",
+			"<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>",
+			"<img src='src/images/Homepage/giphy3.gif' alt='Gif3'>",
+			"<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>",
+			"<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>",
+			"<img src='src/images/Homepage/giphy4.gif' alt='Gif4'>",
+			"<img src='src/images/Homepage/giphy5.gif' alt='Gif5'>",
+			"<img src='src/images/Homepage/giphy6.gif' alt='Gif6'>",
+			"<img src='src/images/Homepage/giphy7.gif' alt='Gif7'>",
+			"<img src='src/images/Homepage/giphy8.gif' alt='Gif8'>",
+			"<img src='src/images/Homepage/giphy9.gif' alt='Gif9'>",
+			"<img src='src/images/Homepage/giphy10.gif' alt='Gif10'>",
+			"<img src='src/images/Homepage/giphy11.gif' alt='Gif11'>",
+			"<img src='src/images/Homepage/giphy12.gif' alt='Gif12'>",
+			"<img src='src/images/Homepage/giphy13.gif' alt='Gif13'>",
+			"<img src='src/images/Homepage/giphy14.gif' alt='Gif14'>",
+			"<img src='src/images/Homepage/giphy15.gif' alt='Gif15'>" );
   
     // start changing everything
     startChanging();

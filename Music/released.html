@@ -129,24 +129,24 @@
     <div class="mainArticleTitle">
         <h1 class="animation-element slide-bottom delay0 dur1000">Released Music</h1>
     </div>
-    <div class="cs-tab">
+    <div class="cs-tab daretobegin">
       <div class="cs-tab-contentfigure animation-element fade-in delay700 dur1000">
-      		<figure><img src="../src/images/Music/standardUnreleased.jpg" width="100%" height="100%" alt="Dare To Begin"></figure>
+      		<figure><img src="../src/images/Music/AlanRysisCapaDareToBegin2.png" width="100%" height="100%" alt="Dare To Begin"></figure>
       </div>
       <div class="cs-tab-contentText animation-element fade-in delay1000 dur1000">
-        <h2>Alan Rysis - Dare To Begin</h2>
-        <p>A tune that marks the beginning!</p>
+        <h2>Alan Rysis - Dare to Begin</h2>
+        <p>A tune inspired by that little spark of feelings that occur when you start or try something new!</p>
         <div class="calls">
         	<div class="navBt slide-btn fRight">
-      			<a class="buyBtLink liteboxMsg track" data-tracking="ref=daretobeginBuy" href="#buyMusic" data-name="Alan Rysis - Dare To Begin" data-img-cover="../src/images/Music/standardUnreleased.jpg" data-link-itunes="https://geo.itunes.apple.com/us/album/ar/123456?mt=1&app=music" data-link-spotify="https://open.spotify.com/album/xpto" data-link-amazon="https://music.amazon.com/albums/xpto" data-link-google="https://play.google.com/store/music/artist?id=xpto" data-hover="Buy this track" target="_self"><span>Buy this track</span></a>
+      			<a class="buyBtLink liteboxMsg track" data-tracking="ref=daretobeginBuy" href="#buyMusic" data-name="Alan Rysis - Dare to Begin" data-img-cover="../src/images/Music/AlanRysisCapaDareToBegin2.png" data-link-itunes="http://itunes.apple.com/album/id1465906932?ls=1&app=itunes" data-link-spotify="https://open.spotify.com/album/4KdTfhdB31Los5obLPeFy1?si=kAp5O4KBTACE637RB85fAg" data-link-amazon="https://music.amazon.com/albums/B07SFZB7L6?tab=CATALOG" data-link-google="https://play.google.com/store/music/album/Alan_Rysis_Dare_to_Begin?id=B2tvezvotcdc6fdhdxrj3ejltwy&hl=en" data-hover="Buy this track" target="_self"><span>Buy this track</span></a>
     		</div>
             <div class="navBt slide-btn fRight">
-      			<a class="liteboxMsg track" data-tracking="ref=daretobeginSupport" href="#giveSupport" data-name="Alan Rysis - Dare To Begin" data-hover="Support this track" target="_blank"><span>Support this track</span></a>
+      			<a class="liteboxMsg track" data-tracking="ref=daretobeginSupport" href="#giveSupport" data-name="Alan Rysis - Dare to Begin" data-hover="Support this track" target="_blank"><span>Support this track</span></a>
     		</div>
         </div>
         <span class="clearfix"></span>
         <h3 class="cFloat">SoundCloud Preview:</h3>
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/308322782&amp;color=464c54&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        <iframe width="100%" height="166" sscrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/628834572&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
         <h3>Youtube Teaser:</h3>
         <figure class="YTPlay"><img src="../src/images/Music/StandardYTthumb.jpg" width="100%" height="100%" alt="daretobegin" border="0"><!--<a id="daretobeginTeaser" class="litebox popTriger track" data-tracking="ref=daretobeginTeaser" href="https://www.youtube.com/watch?v=xXzP1nuJhVc" target="_self"><span></span></a>-->
 			<a class="btComingSoon"></a>
@@ -173,12 +173,11 @@
    		<figcaption>
     		<h1 id="musicTitle">Alan Rysis</h1>
 			<p style="margin-bottom: 50px;">Thank you for supporting this track, I hope you enjoy playing this tune as much as I do.</p>
-			<p>This track have been submitted to the stores and it's now waiting to being approved. The iTunes, Spotify, Amazon Music and Google Play Music links are going to be available soon.</p>
-			<!--<p>Please, choose your favourite store:</p>
+			<p>Please, choose your favourite store:</p>
         	<a class="icon" id="itunesBt" href="" target="_blank"><img src="../src/images/Global/itunesLogo.png" alt="iTunes"></a>
 			<a class="icon" id="spotifyBt" href="" target="_blank"><img src="../src/images/Global/spotifyLogo.png" alt="Spotify"></a>
 			<a class="icon" id="amazonBt" href="" target="_blank"><img src="../src/images/Global/amazonMusicLogo.png" alt="Amazon Music"></a>
-			<a class="icon" id="googleBt" href="" target="_blank"><img src="../src/images/Global/googleMusicLogo.png" alt="Google Play Music"></a>-->
+			<a class="icon" id="googleBt" href="" target="_blank"><img src="../src/images/Global/googleMusicLogo.png" alt="Google Play Music"></a>
 		</figcaption>
 	</div>
 </div>
@@ -199,6 +198,7 @@ $(document).ready(function() {
 	});
 	
 	$('.buyBtLink').on( "click", function() {
+		$('#imgCover').attr('src', $(this).attr('data-img-cover'));
 		$('#musicTitle').html($(this).attr('data-name'));
 		$('#itunesBt').attr('href', $(this).attr('data-link-itunes'));
 		$('#spotifyBt').attr('href', $(this).attr('data-link-spotify'));
